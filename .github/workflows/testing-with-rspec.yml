@@ -2,8 +2,8 @@
 
 # ワークフローの名前
 name: Testing with RSpec
-# ワークフローのトリガー[全てのpush時に実行]
-on: [push]
+# ワークフローのトリガー[PR時に実行]
+on: [pull_request]
 
 # ワークフローで実行される内容
 jobs:
