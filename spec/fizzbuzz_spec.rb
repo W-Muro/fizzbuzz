@@ -26,7 +26,4 @@ describe Fizzbuzz do
     it { subject.calculate(75).should eq 'GitHub'}
     it { subject.calculate(77).should eq 'GitHub'}
   end
-  context 'GitHub Actions Test' do
-    it { subject.calculate(1).should eq 'test'}
-  end
 end
