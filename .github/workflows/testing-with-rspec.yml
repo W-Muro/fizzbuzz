@@ -1,0 +1,22 @@
+# コメントは「構文の意味[当コードの解説]」の形式で記述
+
+# ワークフローの名前
+name: Testing with RSpec
+# ワークフローのトリガー[全てのpush時に実行]
+on: [push]
+
+# ワークフローで実行される内容
+jobs:
+  # ジョブの名前
+  rspec:
+    # ホステッドランナーの指定(latestはGitHubが提供する最新安定版(ベンダーの提供する最新安定版とは限らない))
+    runs-on: ubuntu-latest
+    # ジョブの実行内容
+    steps:
+    - uses: actions/checkout@v3
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.1'
+        bundler-cache: true
+    -  run: bundle install
+    -  run: bundle exec rspec
